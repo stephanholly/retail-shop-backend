@@ -4,7 +4,6 @@ exports.up = function(knex, Promise) {
     table.increments();
     table.integer('product_id');
     table.integer('price');
-    table.integer('quantity');
     table.integer('order_id');
   })
 };
