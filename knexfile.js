@@ -9,20 +9,20 @@ module.exports = {
       host: '127.0.0.1'
     },
     migrations: {
-      directory: __dirname + './db/seeds'
+      directory: './migrations'
     },
   seeds: {
-  directory: __dirname + './db/seeds'
+  directory: './seeds'
 }},
 
   production: {
     client: 'pg',
     connection: process.env.DATABASE_URL,
     migrations: {
-      directory: __dirname + './db/seeds'
+      directory: './migrations'
     },
   seeds: {
-  directory: __dirname + './db/seeds'
+  directory: './seeds'
 }
 }
 
