@@ -7,43 +7,23 @@ module.exports = {
     connection: {
       database: 'dropstore',
       host: '127.0.0.1'
-    }
-  },
-
-  seeds: {
-  directory: './seeds'
-},
-
-  staging: {
-    client: 'postgresql',
-    connection: {
-      database: 'my_db',
-      user:     'username',
-      password: 'password'
-    },
-    pool: {
-      min: 2,
-      max: 10
     },
     migrations: {
-      tableName: 'knex_migrations'
-    }
-  },
+      directory: __dirname + './db/seeds'
+    },
+  seeds: {
+  directory: __dirname + './db/seeds'
+}},
 
   production: {
-    client: 'postgresql',
-    connection: {
-      database: 'my_db',
-      user:     'username',
-      password: 'password'
-    },
-    pool: {
-      min: 2,
-      max: 10
-    },
+    client: 'pg',
+    connection: process.env.DATABASE_URL,
     migrations: {
-      tableName: 'knex_migrations'
-    }
-  }
+      directory: __dirname + './db/seeds'
+    },
+  seeds: {
+  directory: __dirname + './db/seeds'
+}
+}
 
 };
